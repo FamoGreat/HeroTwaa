@@ -6,5 +6,6 @@ namespace HeroTwaa.Repositories.IRepository
     {
         Task<IEnumerable<Project>> GetAllProjectsAsync();
         Task<Project> GetProjectByIdAsync(int id);
+        void Update(Project project);
     }
 }

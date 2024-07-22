@@ -1,5 +1,6 @@
 using HeroTwaa;
 using HeroTwaa.Data;
+using HeroTwaa.Helpers;
 using HeroTwaa.Models;
 using HeroTwaa.Repositories;
 using HeroTwaa.Services;
@@ -58,6 +59,9 @@ builder.Services.AddTransient<IEmailSender, MailService>();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Use CustomExceptionMiddleware
+app.UseMiddleware<CustomExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

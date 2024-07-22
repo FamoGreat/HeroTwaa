@@ -20,6 +20,10 @@ namespace HeroTwaa.Repositories.Repository
         {
             return await ApplicationDbContext.Projects.FindAsync(id);
         }
+        public void Update(Project project)
+        {
+            ApplicationDbContext.Projects.Update(project);
+        }
 
         private ApplicationDbContext ApplicationDbContext
         {
